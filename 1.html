@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background-color: white; /* Ensure the iframe has a white background */
+        }
+    </style>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Телеграм Бот "Нейронка"</title>
+<style>
+body {
+margin: 0;
+font-family: Arial, sans-serif;
+background: linear-gradient(135deg, #6e8efb, #a777e3);
+color: white;
+overflow-x: hidden;
+cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><circle cx="12" cy="12" r="3"/></svg>') 12 12, auto;
+user-select: none; /* Запрет выделения текста */
+-webkit-user-select: none; /* Для Safari */
+-moz-user-select: none; /* Для Firefox */
+-ms-user-select: none; /* Для IE */
+}
+header {
+text-align: center;
+padding: 45px 20px; /* Увеличено верхнее и нижнее отступы на 5px */
+animation: slide-up 1.5s ease-out;
+}
+header h1 {
+font-size: 2.5rem;
+margin-bottom: 10px;
+}
+header p {
+font-size: 1rem;
+line-height: 1.6;
+}
+.cta-button {
+display: inline-block;
+margin-top: 20px;
+padding: 12px 25px;
+font-size: 1rem;
+color: #fff;
+background-color: #ff6f61;
+border-radius: 25px;
+text-decoration: none;
+transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+position: relative;
+overflow: hidden;
+}
+.cta-button::before {
+content: '';
+position: absolute;
+top: 0;
+left: -100%;
+width: 100%;
+height: 100%;
+background: rgba(255, 255, 255, 0.3);
+transition: left 0.5s ease;
+z-index: 1;
+}
+.cta-button:hover {
+transform: scale(1.05);
+box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+background-color: #ff4d4d;
+}
+.cta-button:hover::before {
+left: 100%;
+}
+.features {
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+padding: 25px; /* Увеличено отступы на 5px */
+gap: 20px;
+}
+.feature-card {
+background: rgba(255, 255, 255, 0.1);
+border-radius: 15px;
+padding: 13px;
+width: calc(50% - 20px);
+text-align: center;
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+box-sizing: border-box;
+}
+.feature-card:hover {
+transform: translateY(-10px);
+box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+.feature-card h3 {
+font-size: 1.5rem;
+margin-bottom: 10px;
+}
+.feature-card p {
+font-size: 1rem;
+line-height: 1.6;
+}
+footer {
+padding: 25px; /* Увеличено отступы на 5px */
+text-align: center;
+}
+footer a {
+margin: 0 10px;
+text-decoration: none;
+transition: opacity 0.3s ease;
+}
+footer a img {
+width: 24px;
+vertical-align: middle;
+opacity: 0.8;
+filter: brightness(0) invert(1); /* Делаем иконки белыми */
+}
+footer a:hover img {
+opacity: 1;
+}
+@media (min-width: 768px) {
+.feature-card {
+width: calc(33.333% - 20px);
+}
+header h1 {
+font-size: 3rem;
+}
+header p {
+font-size: 1.2rem;
+}
+}
+@media (min-width: 1200px) {
+.container {
+max-width: 1200px;
+margin: 0 auto;
+padding: 0 20px;
+}
+header {
+padding: 45px 20px; /* Увеличено верхнее и нижнее отступы */
+}
+.features {
+padding: 25px 0; /* Увеличено верхнее и нижнее отступы */
+}
+}
+@keyframes slide-up {
+from {
+opacity: 0;
+transform: translateY(50px);
+}
+to {
+opacity: 1;
+transform: translateY(0);
+}
+}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+<h1>Телеграм Бот "Нейронка"</h1>
+<p>Умный помощник для решения задач, ответов на вопросы и общения в Telegram.</p>
+<a href="https://t.me/resheniefotobot?start=655171833" class="cta-button" target="_blank">Попробовать сейчас</a>
+</header>
+<div class="features">
+<div class="feature-card">
+<h3>🤖 Текстовые запросы</h3>
+<p>Обработка сложных текстовых запросов с использованием передовых технологий ИИ.</p>
+</div>
+<div class="feature-card">
+<h3>🖼️ Анализ изображений</h3>
+<p>Распознавание объектов, лиц и текста на изображениях с детальным описанием.</p>
+</div>
+<div class="feature-card">
+<h3>🎨 Генерация изображений</h3>
+<p>Создание уникальных изображений по вашим запросам с помощью нейросетей.</p>
+</div>
+<div class="feature-card">
+<h3>🗣️ Голосовой вывод</h3>
+<p>Преобразование текстовых ответов в голосовые сообщения для удобства восприятия.</p>
+</div>
+<div class="feature-card">
+<h3>📚 Образовательная помощь</h3>
+<p>Помощь с домашними заданиями, написанием эссе и объяснением сложных тем.</p>
+</div>
+<div class="feature-card">
+<h3>👥 Поддержка групп</h3>
+<p>Возможность использования бота в групповых чатах для помощи всей команде.</p>
+</div>
+<div class="feature-card">
+<h3>📊 Статистика</h3>
+<p>Отслеживание активности и статистики использования бота для анализа прогресса.</p>
+</div>
+</div>
+<footer>
+<a href="https://github.com/Sppqq" target="_blank">
+<img src="https://i.imgur.com/sNCDEYA.png" alt="GitHub">
+</a>
+<a href="https://t.me/neyronkabotnews" target="_blank">
+<img src="https://i.imgur.com/983zqhx.png" alt="Telegram News">
+</a>
+</footer>
+</div>
+</body>
+</html>
+
+    <script>
+        
+    </script>
+</body>
+</html>
