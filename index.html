@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale: 1.0">
     <link rel="icon" href="https://i.imgur.com/fQ7PbBH.png" type="image/png">
     <style>
         body {
@@ -19,148 +19,151 @@
     <link rel="icon" href="https://i.imgur.com/fQ7PbBH.png" type="image/png">
 <title>Телеграм Бот "Нейронка"</title>
 <style>
+/* Light Theme (Default) */
 body {
-margin: 0;
-font-family: Arial, sans-serif;
-background: linear-gradient(135deg, #6e8efb, #a777e3);
-color: white;
-overflow-x: hidden;
-cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><circle cx="12" cy="12" r="3"/></svg>') 12 12, auto;
-user-select: none;
--webkit-user-select: none;
--moz-user-select: none;
--ms-user-select: none;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #6e8efb, #a777e3);
+    color: white;
+    overflow-x: hidden;
+    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="black"><circle cx="12" cy="12" r="3"/></svg>') 12 12, auto;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    transition: background-color 0.5s, color 0.5s;
 }
 header {
-text-align: center;
-padding: 45px 20px;
-animation: slide-up 1.5s ease-out;
+    text-align: center;
+    padding: 45px 20px;
+    animation: slide-up 1.5s ease-out;
 }
 header h1 {
-font-size: 2.5rem;
-margin-bottom: 10px;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
 }
 header p {
-font-size: 1rem;
-line-height: 1.6;
+    font-size: 1rem;
+    line-height: 1.6;
 }
 .cta-button {
-display: inline-block;
-margin-top: 20px;
-padding: 12px 25px;
-font-size: 1rem;
-color: #fff;
-background-color: #ff6f61;
-border-radius: 25px;
-text-decoration: none;
-transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
-position: relative;
-overflow: hidden;
-transform: scale(1.05); /* Increased size by 5% */
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 25px;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #ff6f61;
+    border-radius: 25px;
+    text-decoration: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    transform: scale(1.05); /* Increased size by 5% */
 }
 .cta-button::before {
-content: '';
-position: absolute;
-top: 0;
-left: -100%;
-width: 100%;
-height: 100%;
-background: rgba(255, 255, 255, 0.3);
-transition: left 0.5s ease;
-z-index: 1;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.3);
+    transition: left 0.5s ease;
+    z-index: 1;
 }
 .cta-button:hover {
-transform: scale(1.10);
-box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
-background-color: #ff4d4d;
+    transform: scale(1.10);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    background-color: #ff4d4d;
 }
 .cta-button:hover::before {
-left: 100%;
+    left: 100%;
 }
 .features {
-display: flex;
-flex-wrap: wrap;
-justify-content: center;
-padding: 25px;
-gap: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 25px;
+    gap: 20px;
 }
 .feature-card {
-background: rgba(255, 255, 255, 0.1);
-border-radius: 15px;
-padding: 13px;
-width: calc(100% - 20px);
-text-align: center;
-transition: transform 0.3s ease, box-shadow 0.3s ease;
-box-sizing: border-box;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 13px;
+    width: calc(100% - 20px);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-sizing: border-box;
 }
 .feature-card:hover {
-transform: translateY(-10px);
-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 .feature-card h3 {
-font-size: 1.5rem;
-margin-bottom: 10px;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
 }
 .feature-card p {
-font-size: 1rem;
-line-height: 1.6;
+    font-size: 1rem;
+    line-height: 1.6;
 }
 footer {
-padding: 25px;
-text-align: center;
+    padding: 25px;
+    text-align: center;
 }
 footer a {
-margin: 0 10px;
-text-decoration: none;
-transition: opacity 0.3s ease;
+    margin: 0 10px;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
 }
 footer a img {
-width: 24px;
-vertical-align: middle;
-opacity: 0.8;
-filter: brightness(0) invert(1);
+    width: 24px;
+    vertical-align: middle;
+    opacity: 0.8;
+    filter: invert(1); /* Инвертируем цвет иконок, чтобы сделать их белыми в светлой теме */
+    transition: filter 0.5s, opacity 0.5s;
 }
 footer a:hover img {
-opacity: 1;
+    opacity: 1;
 }
 @media (min-width: 768px) {
-.feature-card {
-width: calc(50% - 20px);
-border-radius: 15px;
-padding: 13px;
-}
-.feature-card:hover {
-transform: translateY(-10px);
-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-}
-.feature-card h3 {
-font-size: 1.5rem;
-margin-bottom: 10px;
-}
-.feature-card p {
-font-size: 1rem;
-line-height: 1.6;
-}
+    .feature-card {
+        width: calc(50% - 20px);
+        border-radius: 15px;
+        padding: 13px;
+    }
+    .feature-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+    .feature-card h3 {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+    }
+    .feature-card p {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
 }
 @media (min-width: 1200px) {
-.container {
-max-width: 1200px;
-margin: 0 auto;
-padding: 0 20px;
-}
-.feature-card {
-width: calc(33.333% - 20px);
-}
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+    .feature-card {
+        width: calc(33.333% - 20px);
+    }
 }
 @keyframes slide-up {
-from {
-opacity: 0;
-transform: translateY(50px);
-}
-to {
-opacity: 1;
-transform: translateY(0);
-}
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* Beautiful Accordion FAQ Section */
@@ -262,9 +265,8 @@ transform: translateY(0);
     opacity: 0;
     visibility: hidden;
     transition: max-height 0.3s ease, padding-top 0.3s ease, padding-bottom 0.3s ease, opacity 0.3s ease, visibility 0s ease 0.3s;
-    /* text-indent: 25px;  Убрали text-indent */
-    left: 0;          /* **Добавлено: Явное положение слева** */
-    position: relative; /* **Добавлено: Относительное позиционирование** */
+    left: 0;
+    position: relative;
 }
 
 .beautiful-faq-answer::before {
@@ -275,9 +277,6 @@ transform: translateY(0);
     opacity: 0;
     display: inline-block;
     vertical-align: top;
-    /* position: absolute;  Убрали absolute позиционирование из прошлого ответа */
-    /* left: 0;         Убрали absolute позиционирование из прошлого ответа */
-    /* top: 10px;        Убрали absolute позиционирование из прошлого ответа */
 }
 
 .beautiful-faq-answer.open {
@@ -292,9 +291,89 @@ transform: translateY(0);
 .beautiful-faq-answer.open::before {
     opacity: 1;
 }
+
+/* Dark Theme Styles */
+body.dark-theme {
+    background: #121212;
+    color: #e0e0e0;
+    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><circle cx="12" cy="12" r="3"/></svg>') 12 12, auto;
+}
+body.dark-theme header h1,
+body.dark-theme header p,
+body.dark-theme .beautiful-faq-title {
+    color: #e0e0e0;
+}
+body.dark-theme .cta-button {
+    color: #fff;
+    background-color: #bb86fc; /* Example dark theme button color */
+}
+body.dark-theme .cta-button:hover {
+    background-color: #9c6ae5; /* Example dark theme button hover color */
+    box-shadow: 0 8px 15px rgba(255, 255, 255, 0.2);
+}
+body.dark-theme .feature-card {
+    background: rgba(255, 255, 255, 0.08); /* Slightly lighter background for dark theme cards */
+}
+body.dark-theme .feature-card:hover {
+    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.2);
+}
+body.dark-theme .beautiful-faq-question-button {
+    color: #bb86fc;
+    background-color: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
+}
+body.dark-theme .beautiful-faq-question-button::before,
+body.dark-theme .beautiful-faq-question-button .arrow {
+    color: #e0e0e0;
+}
+body.dark-theme .beautiful-faq-question-button:hover {
+    color: #9c6ae5;
+    background-color: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 6px 10px rgba(255, 255, 255, 0.2);
+}
+body.dark-theme .beautiful-faq-answer {
+    color: #e0e0e0;
+    background-color: rgba(255, 255, 255, 0.04); /* Slightly lighter background for dark theme answers */
+}
+body.dark-theme .beautiful-faq-answer::before {
+    color: #cf6679; /* Example dark theme answer icon color */
+}
+body.dark-theme footer a img {
+    filter: invert(1); /* Инвертируем цвет иконок, чтобы сделать их белыми и в темной теме */
+    opacity: 0.8;
+}
+
+/* Theme Toggle Button Styles */
+.theme-toggle-button {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    cursor: pointer;
+    z-index: 1000;
+    transition: background-color 0.3s, color 0.3s;
+}
+.theme-toggle-button:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+body.dark-theme .theme-toggle-button {
+    background-color: rgba(50, 50, 50, 0.5);
+    color: #e0e0e0;
+}
+body.dark-theme .theme-toggle-button:hover {
+    background-color: rgba(70, 70, 70, 0.7);
+}
+
+
 </style>
 </head>
 <body>
+<button id="themeToggleButton" class="theme-toggle-button">🌙</button>
+
 <div class="container">
 <header>
 <h1>Телеграм Бот "Нейронка"</h1>
@@ -428,6 +507,85 @@ function toggleAnswer(buttonElement) {
         }
     });
 }
+
+const themeToggleButton = document.getElementById('themeToggleButton');
+const body = document.body;
+const DARK_THEME_CLASS = 'dark-theme';
+const THEME_COOKIE_NAME = 'theme-preference';
+
+function setCookie(name, value, days) {
+    let expires = "";
+    if (days) {
+        const date = new Date();
+        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+        expires = "; expires=" + date.toUTCString();
+    }
+    document.cookie = name + "=" + (value || "") + expires + "; path=/";
+}
+
+function getCookie(name) {
+    const nameEQ = name + "=";
+    const ca = document.cookie.split(';');
+    for (let i = 0; i < ca.length; i++) {
+        let c = ca[i];
+        while (c.charAt(0) === ' ') c = c.substring(1, c.length);
+        if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+    }
+    return null;
+}
+
+function applyTheme(theme) {
+    if (theme === 'dark') {
+        body.classList.add(DARK_THEME_CLASS);
+        themeToggleButton.textContent = '☀️';
+    } else {
+        body.classList.remove(DARK_THEME_CLASS);
+        themeToggleButton.textContent = '🌙';
+    }
+}
+
+function toggleTheme() {
+    if (body.classList.contains(DARK_THEME_CLASS)) {
+        applyTheme('light');
+        setCookie(THEME_COOKIE_NAME, 'light', 365);
+    } else {
+        applyTheme('dark');
+        setCookie(THEME_COOKIE_NAME, 'dark', 365);
+    }
+}
+
+themeToggleButton.addEventListener('click', toggleTheme);
+
+// Initial theme setup
+const savedTheme = getCookie(THEME_COOKIE_NAME);
+if (savedTheme) {
+    applyTheme(savedTheme);
+} else {
+    // Automatic theme based on time (e.g., dark theme from 7 PM to 7 AM)
+    const currentHour = new Date().getHours();
+    if (currentHour >= 19 || currentHour < 7) {
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            applyTheme('dark'); // Apply dark if system prefers dark and it's evening/night
+        } else {
+            applyTheme('light'); // Default to light if no preference or not evening/night
+        }
+    } else {
+        applyTheme('light'); // Default to light during the day
+    }
+}
+
+// Listen for system theme changes to update icon, but respect user cookie preference
+window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+    if (!getCookie(THEME_COOKIE_NAME)) { // Only if no user preference is set
+        if (event.matches && (new Date().getHours() >= 19 || new Date().getHours() < 7)) {
+            applyTheme('dark');
+        } else if (!event.matches) {
+            applyTheme('light');
+        }
+    }
+});
+
+
 </script>
 </body>
 </html>
