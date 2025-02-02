@@ -6,7 +6,7 @@
     <link rel="icon" href="https://i.imgur.com/fQ7PbBH.png" type="image/png">
     <style>
         body {
-            background-color: white; /* Ensure the iframe has a white background */
+            background-color: white; /* Убедитесь, что у iframe белый фон */
         }
     </style>
 </head>
@@ -19,7 +19,7 @@
     <link rel="icon" href="https://i.imgur.com/fQ7PbBH.png" type="image/png">
 <title>Телеграм Бот "Нейронка"</title>
 <style>
-/* Light Theme (Default) */
+/* Светлая тема (по умолчанию) */
 body {
     margin: 0;
     font-family: Arial, sans-serif;
@@ -58,7 +58,7 @@ header p {
     transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
     position: relative;
     overflow: hidden;
-    transform: scale(1.05); /* Increased size by 5% */
+    transform: scale(1.05); /* Увеличенный размер на 5% */
 }
 .cta-button::before {
     content: '';
@@ -94,7 +94,17 @@ header p {
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     box-sizing: border-box;
+    opacity: 0; /* Изначально скрыто */
+    transform: translateY(20px); /* Немного сдвинуто вниз */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out; /* Плавный переход */
 }
+
+.feature-card.visible {
+    opacity: 1; /* Показать, когда в зоне видимости */
+    transform: translateY(0); /* Вернуть в исходное положение */
+}
+
+
 .feature-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
@@ -110,7 +120,16 @@ header p {
 footer {
     padding: 25px;
     text-align: center;
+    opacity: 0; /* Изначально скрыто */
+    transform: translateY(20px); /* Немного сдвинуто вниз */
+    transition: opacity 1s ease-out, transform 1s ease-out; /* Плавный переход */
 }
+
+footer.visible {
+    opacity: 1; /* Показать, когда в зоне видимости */
+    transform: translateY(0); /* Вернуть в исходное положение */
+}
+
 footer a {
     margin: 0 10px;
     text-decoration: none;
@@ -166,12 +185,21 @@ footer a:hover img {
     }
 }
 
-/* Beautiful Accordion FAQ Section */
+/* Красивая секция FAQ с аккордеоном */
 .beautiful-faq-section {
     padding: 50px 20px;
     max-width: 1200px;
     margin: 20px auto;
+    opacity: 0; /* Изначально скрыто */
+    transform: translateY(20px); /* Немного сдвинуто вниз */
+    transition: opacity 0.8s ease-out 0.2s, transform 0.8s ease-out 0.2s; /* Плавный переход с задержкой */
 }
+
+.beautiful-faq-section.visible {
+    opacity: 1; /* Показать, когда в зоне видимости */
+    transform: translateY(0); /* Вернуть в исходное положение */
+}
+
 
 .beautiful-faq-title {
     text-align: center;
@@ -182,7 +210,16 @@ footer a:hover img {
 
 .beautiful-faq-item {
     margin-bottom: 20px;
+    opacity: 0; /* Изначально скрыто */
+    transform: translateY(20px); /* Немного сдвинуто вниз */
+    transition: opacity 0.5s ease-out 0.3s, transform 0.5s ease-out 0.3s; /* Плавный переход с задержкой */
 }
+
+.beautiful-faq-item.visible {
+    opacity: 1; /* Показать, когда в зоне видимости */
+    transform: translateY(0); /* Вернуть в исходное положение */
+}
+
 
 .beautiful-faq-question-button {
     display: flex;
@@ -204,7 +241,7 @@ footer a:hover img {
     margin-bottom: 0;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
-    transform: scale(1.05); /* Increased size by 5% */
+    transform: scale(1.05); /* Увеличенный размер на 5% */
 }
 
 .beautiful-faq-question-button::before {
@@ -292,7 +329,7 @@ footer a:hover img {
     opacity: 1;
 }
 
-/* Dark Theme Styles */
+/* Стили темной темы */
 body.dark-theme {
     background: #121212;
     color: #e0e0e0;
@@ -305,14 +342,14 @@ body.dark-theme .beautiful-faq-title {
 }
 body.dark-theme .cta-button {
     color: #fff;
-    background-color: #bb86fc; /* Example dark theme button color */
+    background-color: #bb86fc; /* Пример цвета кнопки для темной темы */
 }
 body.dark-theme .cta-button:hover {
-    background-color: #9c6ae5; /* Example dark theme button hover color */
+    background-color: #9c6ae5; /* Пример цвета кнопки при наведении для темной темы */
     box-shadow: 0 8px 15px rgba(255, 255, 255, 0.2);
 }
 body.dark-theme .feature-card {
-    background: rgba(255, 255, 255, 0.08); /* Slightly lighter background for dark theme cards */
+    background: rgba(255, 255, 255, 0.08); /* Немного более светлый фон для карточек в темной теме */
 }
 body.dark-theme .feature-card:hover {
     box-shadow: 0 10px 20px rgba(255, 255, 255, 0.2);
@@ -333,17 +370,17 @@ body.dark-theme .beautiful-faq-question-button:hover {
 }
 body.dark-theme .beautiful-faq-answer {
     color: #e0e0e0;
-    background-color: rgba(255, 255, 255, 0.04); /* Slightly lighter background for dark theme answers */
+    background-color: rgba(255, 255, 255, 0.04); /* Немного более светлый фон для ответов в темной теме */
 }
 body.dark-theme .beautiful-faq-answer::before {
-    color: #cf6679; /* Example dark theme answer icon color */
+    color: #cf6679; /* Пример цвета иконки ответа для темной темы */
 }
 body.dark-theme footer a img {
     filter: invert(1); /* Инвертируем цвет иконок, чтобы сделать их белыми и в темной теме */
     opacity: 0.8;
 }
 
-/* Theme Toggle Button Styles */
+/* Стили кнопки переключения темы */
 .theme-toggle-button {
     position: fixed;
     top: 20px;
@@ -411,7 +448,7 @@ body.dark-theme .theme-toggle-button:hover {
     </div>
 </div>
 
-<!-- Beautiful Accordion FAQ Section -->
+<!-- Красивая секция FAQ с аккордеоном -->
 <div class="beautiful-faq-section">
     <h2 class="beautiful-faq-title">Частые вопросы</h2>
     <div class="beautiful-faq-item">
@@ -556,27 +593,27 @@ function toggleTheme() {
 
 themeToggleButton.addEventListener('click', toggleTheme);
 
-// Initial theme setup
+// Первоначальная настройка темы
 const savedTheme = getCookie(THEME_COOKIE_NAME);
 if (savedTheme) {
     applyTheme(savedTheme);
 } else {
-    // Automatic theme based on time (e.g., dark theme from 7 PM to 7 AM)
+    // Автоматическая тема в зависимости от времени (например, темная тема с 7 вечера до 7 утра)
     const currentHour = new Date().getHours();
     if (currentHour >= 19 || currentHour < 7) {
         if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-            applyTheme('dark'); // Apply dark if system prefers dark and it's evening/night
+            applyTheme('dark'); // Применить темную, если система предпочитает темную и сейчас вечер/ночь
         } else {
-            applyTheme('light'); // Default to light if no preference or not evening/night
+            applyTheme('light'); // По умолчанию светлая, если нет предпочтений или не вечер/ночь
         }
     } else {
-        applyTheme('light'); // Default to light during the day
+        applyTheme('light'); // По умолчанию светлая в течение дня
     }
 }
 
-// Listen for system theme changes to update icon, but respect user cookie preference
+// Слушаем изменения системной темы, чтобы обновить иконку, но уважаем предпочтения пользователя из cookie
 window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
-    if (!getCookie(THEME_COOKIE_NAME)) { // Only if no user preference is set
+    if (!getCookie(THEME_COOKIE_NAME)) { // Только если не установлено предпочтение пользователя
         if (event.matches && (new Date().getHours() >= 19 || new Date().getHours() < 7)) {
             applyTheme('dark');
         } else if (!event.matches) {
@@ -585,7 +622,49 @@ window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', eve
     }
 });
 
+// Функция для проверки, виден ли элемент в области просмотра
+function isElementInViewport(element) {
+    const rect = element.getBoundingClientRect();
+    return (
+        rect.bottom >= 0 && // Часть элемента видна сверху
+        rect.top <= (window.innerHeight || document.documentElement.clientHeight) // Часть элемента видна снизу
+    );
+}
 
+// Функция для обработки события прокрутки
+function handleScroll() {
+    const featureCards = document.querySelectorAll('.feature-card');
+    featureCards.forEach((card, index) => {
+        if (isElementInViewport(card) && !card.classList.contains('visible')) {
+            setTimeout(() => {
+                card.classList.add('visible');
+            }, index * 150); // Задержка для каждой карточки для последовательного появления
+        }
+    });
+
+    const faqSection = document.querySelector('.beautiful-faq-section');
+    if (isElementInViewport(faqSection)) {
+        faqSection.classList.add('visible');
+    }
+
+    const faqItems = document.querySelectorAll('.beautiful-faq-item');
+    faqItems.forEach(item => {
+        if (isElementInViewport(item)) {
+            item.classList.add('visible');
+        }
+    });
+
+    const footerElement = document.querySelector('footer');
+    if (isElementInViewport(footerElement)) {
+        footerElement.classList.add('visible');
+    }
+}
+
+// Добавить слушатель события прокрутки
+window.addEventListener('scroll', handleScroll);
+
+// Вызвать handleScroll при загрузке страницы для проверки начальной видимости
+handleScroll();
 </script>
 </body>
 </html>
